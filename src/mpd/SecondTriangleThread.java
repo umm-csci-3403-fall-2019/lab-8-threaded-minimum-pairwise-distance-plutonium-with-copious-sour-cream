@@ -3,12 +3,9 @@ package mpd;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SecondTriangleThread extends TriangleThread implements Runnable{
-  int[] values;
-  AtomicLong externalValue;
 
-  public SecondTriangleThread(int[] values, AtomicLong externalValue){
-    this.values = values;
-    this.externalValue = externalValue;
+  public SecondTriangleThread(int[] values, AtomicLong externalValue) {
+    super(values, externalValue);
   }
 
   public Long findMPD(){
