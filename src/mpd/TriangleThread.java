@@ -2,7 +2,7 @@ package mpd;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-abstract class TriangleThread {
+abstract class TriangleThread extends Thread{
 
   /*
   uses an AtomicLong and a spinloop to try and commit our value to the AtomicLong
