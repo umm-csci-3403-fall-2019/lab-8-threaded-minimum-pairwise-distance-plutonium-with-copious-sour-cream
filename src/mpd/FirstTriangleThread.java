@@ -3,10 +3,10 @@ package mpd;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class FirstTriangleThread extends TriangleThread implements Runnable{
-  Integer[] values;
+  int[] values;
   AtomicLong externalValue;
 
-  public FirstTriangleThread(Integer[] values, AtomicLong externalValue){
+  public FirstTriangleThread(int[] values, AtomicLong externalValue){
     this.values = values;
     this.externalValue = externalValue;
   }
