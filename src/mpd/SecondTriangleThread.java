@@ -20,8 +20,4 @@ public class SecondTriangleThread extends TriangleThread implements Runnable{
     return best_yet;
   }
 
-  @Override
-  public void run() {
-    report(findMPD(),externalValue);
-  }
 }
