@@ -19,7 +19,9 @@ public class ThreadedMinimumPairwiseDistanceTest {
     public void testEmptyArray() {
         int[] values = new int[0];
         long minimum = mpd.minimumPairwiseDistance(values);
-        assertEquals(Integer.MAX_VALUE, minimum);
+        //assertEquals(Integer.MAX_VALUE, minimum);
+        //Change to long.Max
+        assertEquals(Long.MAX_VALUE, minimum);
     }
 
     @Test
