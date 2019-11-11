@@ -8,8 +8,8 @@ public class SecondTriangleThread extends TriangleThread implements Runnable{
     super(values, externalValue);
   }
 
-  public Long findMPD(){
-    Long best_yet = Long.MAX_VALUE;
+  public long findMPD(){
+    long best_yet = Long.MAX_VALUE;
     for (int j = 0; j < values.length / 2; j++){
       for (int i = values.length / 2; i <= j + values.length / 2; i++){
         if (Math.abs(values[i] - values[j]) < best_yet){

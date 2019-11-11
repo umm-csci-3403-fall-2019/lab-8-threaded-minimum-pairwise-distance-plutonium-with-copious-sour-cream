@@ -11,12 +11,12 @@ abstract class TriangleThread extends Thread implements Runnable{
     this.externalValue = externalValue;
   }
 
-  public abstract Long findMPD();
+  public abstract long findMPD();
   /*
   uses an AtomicLong and a spinloop to try and commit our value to the AtomicLong
    */
-  public void report(Long ourValue, AtomicLong externalValue){
-    Long localValue = externalValue.get();
+  public void report(long ourValue, AtomicLong externalValue){
+    long localValue = externalValue.get();
       while ((localValue > ourValue) &&
               (!externalValue.compareAndSet(localValue,ourValue))){
         localValue = externalValue.get();
