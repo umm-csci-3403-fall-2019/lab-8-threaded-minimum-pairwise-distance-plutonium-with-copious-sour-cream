@@ -11,16 +11,21 @@ abstract class TriangleThread extends Thread implements Runnable{
     this.externalValue = externalValue;
   }
 
+  /*
+  Each class implements it's own traversal of the subtriangle as an override of this method.
+   */
   public abstract long findMPD();
+
+
   /*
   uses an AtomicLong and a spinloop to try and commit our value to the AtomicLong
    */
   public void report(long ourValue, AtomicLong externalValue){
-    long localValue = externalValue.get();
-      while ((localValue > ourValue) &&
-              (!externalValue.compareAndSet(localValue,ourValue))){
-        localValue = externalValue.get();
-      }
+    long localValue;
+    //While loop tries to update external value if the new value is less than the current value in external value
+    //if the value in external value is updated in the meantime we get its value again and repeat
+      while (((localValue= externalValue.get()) > ourValue) &&
+              (!externalValue.compareAndSet(localValue,ourValue)));
     }
 
   @Override
