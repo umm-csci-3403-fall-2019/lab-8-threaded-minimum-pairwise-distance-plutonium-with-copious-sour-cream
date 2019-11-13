@@ -19,7 +19,7 @@ public class SerialMinimumPairwiseDistanceTest {
     public void testEmptyArray() {
         int[] values = new int[0];
         long minimum = mpd.minimumPairwiseDistance(values);
-        assertEquals(Integer.MAX_VALUE, minimum);
+        assertEquals(Long.MAX_VALUE, minimum);
     }
 
     @Test
