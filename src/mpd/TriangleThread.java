@@ -20,7 +20,7 @@ abstract class TriangleThread extends Thread implements Runnable{
   /*
   uses an AtomicLong and a spinloop to try and commit our value to the AtomicLong
    */
-  public void report(long ourValue, AtomicLong externalValue){
+  public void updateExternalValue(long ourValue, AtomicLong externalValue){
     long localValue;
     //While loop tries to update external value if the new value is less than the current value in external value
     //if the value in external value is updated in the meantime we get its value again and repeat
@@ -30,7 +30,7 @@ abstract class TriangleThread extends Thread implements Runnable{
 
   @Override
   public void run() {
-    report(findMPD(),externalValue);
+    updateExternalValue(findMPD(),externalValue);
   }
   }
 
